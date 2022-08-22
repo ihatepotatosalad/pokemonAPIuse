@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar"
 import PokemonDisplay from "./pokemonDisplay"
 export default function Pokemon(props) {
     let [search, setSearch] = useState('pikachu')
-    let [message, setMessage] = useState('search for pokemon')
+    let [message, setMessage] = useState('')
     let [data, setData] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function Pokemon(props) {
                 if (resData) {
                     setData(resData)
                 } else {
-                    console.log('not found')
+                    setMessage('not found')
                 }
             }
             fetchData()
@@ -35,8 +35,9 @@ export default function Pokemon(props) {
         <>
             <div>
                 <SearchBar handleSearch={handleSearch} />
+                {message}
                 <h1>Name: {search}</h1>
-                <img src={data.sprites.front_default} />
+                <img src={data.sprites.front_default} alt={data.name} />
                 <h2>Height: {data.height}</h2>
                 <h2>ID: {data.id}</h2>
                 <h2>Weight: {data.weight} </h2>
