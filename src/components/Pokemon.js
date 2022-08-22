@@ -35,9 +35,12 @@ export default function Pokemon(props) {
         <>
             <div>
                 <SearchBar handleSearch={handleSearch} />
-                <h1>{search}</h1>
-                <img src={data.sprites} />
-                <PokemonDisplay />
+                <h1>Name: {search}</h1>
+                <img src={data.sprites.front_default} />
+                <h2>Height: {data.height}</h2>
+                <h2>ID: {data.id}</h2>
+
+
 
 
 
