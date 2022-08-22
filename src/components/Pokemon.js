@@ -39,6 +39,7 @@ export default function Pokemon(props) {
                 <img src={data.sprites.front_default} />
                 <h2>Height: {data.height}</h2>
                 <h2>ID: {data.id}</h2>
+                <h2>Weight: {data.weight} </h2>
 
 
 
