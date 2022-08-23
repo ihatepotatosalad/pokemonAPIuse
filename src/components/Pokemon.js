@@ -4,7 +4,7 @@ import PokemonDisplay from "./pokemonDisplay"
 export default function Pokemon(props) {
     let [search, setSearch] = useState('pikachu')
     let [message, setMessage] = useState('')
-    let [data, setData] = useState([])
+    let [data, setData] = useState({})
 
     useEffect(() => {
         if (search) {
@@ -37,11 +37,11 @@ export default function Pokemon(props) {
                 <SearchBar handleSearch={handleSearch} />
                 {message}
                 <h1>Name: {search}</h1>
-                <img src={data.sprites.front_default} alt={data.name} />
+                <img src={data.sprites?.front_default} alt={data.name} />
                 <h2>Height: {data.height}</h2>
                 <h2>ID: {data.id}</h2>
                 <h2>Weight: {data.weight} </h2>
-
+                {data.moves?.map(item => item?.move?.name)}
 
 
 
