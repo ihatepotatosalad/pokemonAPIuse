@@ -53,7 +53,7 @@ export default function Pokemon(props) {
                             Height: {data.height}<br />
                             ID: {data.id}<br />
                             Weight: {data.weight}<br />
-                            Types: {data.types?.map(item => <li>{item?.type?.name}</li>)}
+                            Types: {data.types?.map((item, i) => <li key={i}>{item?.type?.name}</li>)}
                         </Card.Text>
 
                     </Card.Body>
