@@ -1,3 +1,4 @@
+//imports
 import { Fragment, React, useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import PokemonDisplay from "./pokemonDisplay";
@@ -7,7 +8,10 @@ export default function Pokemon(props) {
     let [search, setSearch] = useState('pikachu')
     let [message, setMessage] = useState('')
     let [data, setData] = useState({})
-
+    //the purpose of this useeffect is to make a call to the pokemon portion of the api call via search handlesearch function
+    //is passed into the seachbar as a property to recieve the value of that the sear value will be via setSearch use state if not found
+    // is will set the message = not found 
+    // the purpose of thje question marks are iteration basically sayign data.sprites?(if the data is here procede if not wait)to prevent an error
     useEffect(() => {
         if (search) {
             const fetchData = async () => {
