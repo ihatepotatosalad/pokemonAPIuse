@@ -31,7 +31,7 @@ export default function Pokemon(props) {
         setSearch(term)
     }
 
-    console.log(data)
+
 
     return (
         <>
